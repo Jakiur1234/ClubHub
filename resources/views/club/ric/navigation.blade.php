@@ -1,5 +1,5 @@
 {{-- Create a navbar --}}
-<nav class="bg-gray-800 p-3 fixed top-0 w-full flex justify-between font-sans border-b-1 border-white z-10 shadow-xl">
+<nav class="bg-gray-900 p-3 fixed top-0 w-full flex justify-between font-sans z-10" id="nav">
     {{-- Branding section --}}
     <div class="flex items-center justify-start">
         <img src="{{ url('/')}}/assets/images/ric.jpeg" class="w-auto h-10">
@@ -16,23 +16,33 @@
     {{-- All menu for desktop --}}
     <ul class="hidden lg:flex flex-row justify-center">
         <li class="cursor-pointer text-white px-5 py-2 hover:text-blue-500">
-            <a href="">
+            <a href="{{ route('home') }}">
+                FEC Website
+            </a>
+        </li>
+        <li class="cursor-pointer text-white px-5 py-2 hover:text-blue-500">
+            <a href="#home">
                 Home
             </a>
         </li>
         <li class="cursor-pointer text-white px-5 py-2 hover:text-blue-500">
-            <a href="">
-                Courses
-            </a>
-        </li>
-        <li class="cursor-pointer text-white px-5 py-2 hover:text-blue-500">
-            <a href="">
+            <a href="#about">
                 About
             </a>
         </li>
         <li class="cursor-pointer text-white px-5 py-2 hover:text-blue-500">
-            <a href="">
-                Contact
+            <a href="#administration">
+                Administration
+            </a>
+        </li>
+        <li class="cursor-pointer text-white px-5 py-2 hover:text-blue-500">
+            <a href="#events">
+                Events
+            </a>
+        </li>
+        <li class="cursor-pointer text-white px-5 py-2 hover:text-blue-500">
+            <a href="#achievement">
+                Achievement
             </a>
         </li>
     </ul>
@@ -44,7 +54,7 @@
         </button>
         <button onclick=""
             class="bg-gradient-to-r rounded-md shadow-md text-white px-10 mx-2 from-pink-500 to-yellow-600 hover:from-pink-600 hover:to-yellow-900 active:from-yellow-700 active:to-yellow-500">
-            Signup
+            Be a member
         </button>
     </div>
 
@@ -53,23 +63,33 @@
     <div id="mobile-menu" class="hidden lg:hidden absolute top-full left-0 w-full bg-gray-900 shadow-lg">
         <ul class="flex flex-col items-center">
             <li class="cursor-pointer text-white px-5 py-2 hover:text-blue-500">
-                <a href="">
+                <a href="{{ route('home') }}">
+                    FEC Website
+                </a>
+            </li>
+            <li class="cursor-pointer text-white px-5 py-2 hover:text-blue-500">
+                <a href="#home">
                     Home
                 </a>
             </li>
             <li class="cursor-pointer text-white px-5 py-2 hover:text-blue-500">
-                <a href="">
-                    Courses
-                </a>
-            </li>
-            <li class="cursor-pointer text-white px-5 py-2 hover:text-blue-500">
-                <a href="">
+                <a href="#about">
                     About
                 </a>
             </li>
             <li class="cursor-pointer text-white px-5 py-2 hover:text-blue-500">
-                <a href="">
-                    Contact
+                <a href="#administration">
+                    Administration
+                </a>
+            </li>
+            <li class="cursor-pointer text-white px-5 py-2 hover:text-blue-500">
+                <a href="#events">
+                    Events
+                </a>
+            </li>
+            <li class="cursor-pointer text-white px-5 py-2 hover:text-blue-500">
+                <a href="#achievement">
+                    Achievement
                 </a>
             </li>
         </ul>
@@ -80,7 +100,7 @@
             </button>
             <button onclick=""
                 class="bg-gradient-to-r rounded-md shadow-md text-white mx-auto px-10 py-1 from-pink-500 to-yellow-600 hover:from-pink-600 hover:to-yellow-900 active:from-yellow-700 active:to-yellow-500">
-                Signup
+                Be a member
             </button>
         </div>
     </div>
@@ -92,10 +112,20 @@
     const navToggle = document.getElementById('nav-toggle');
     const mobileMenu = document.getElementById('mobile-menu');
     const icon = document.getElementById('icon');
+    const nav = document.getElementById('nav');
 
     navToggle.addEventListener('click', function() {
         mobileMenu.classList.toggle('hidden');
         // Toggle the icon between hamburger and cross
         icon.innerHTML = mobileMenu.classList.contains('hidden') ? '&#9776;' : '&#10005;';
+    });
+
+    window.addEventListener("scroll" , function(){
+        if (window.scrollY > 60) {
+            nav.classList.add("bg-opacity-50");
+        } else {
+            // Remove the class when scrolled back to the top
+            nav.classList.remove("bg-opacity-50");
+        }
     });
 </script>
