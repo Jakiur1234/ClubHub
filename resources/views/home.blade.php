@@ -93,7 +93,7 @@
                     <x-club-card name="Faridpur Engineering College Photographic Club (FECPC)" url="{{route('fecpc-home')}}" image="assets/images/photo.jpeg" />
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 md:mt-5 sm:grid-cols-1 justify-center">
-                    <x-club-card name="Faridpur Engineering College Programming Club (FECPC)" url="{{route('fecpc-home')}}" image="assets/images/program.jpeg" />
+                    <x-club-card name="Faridpur Engineering College Programming Club (FECPC)" url="{{route('fecpcp-home')}}" image="assets/images/program.jpeg" />
                     <x-club-card name="Faridpur Engineering College Sport Association (FECSSA)" url="{{route('fecsa-home')}}" image="assets/images/fecsa.jpeg" />
                 </div>
             </div>
